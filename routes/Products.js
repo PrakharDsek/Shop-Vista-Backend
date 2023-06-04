@@ -5,7 +5,7 @@ import {
   getOrders,
   getProductsById,
   getProductsByUserId,
-  getProductsSponsered,
+  getProductsSponsored,
 } from "../controllers/Products/getProducts.js";
 import { UpdateProduct } from "../controllers/Products/UpdateProduct.js";
 import { DeleteProduct } from "../controllers/Products/DeleteProduct.js";
@@ -21,7 +21,7 @@ Router.get("/products/get", GetProducts);
 Router.get("/products/getOrders", getOrders);
 Router.get("/products/getById", getProductsById);
 Router.get("/products/getByUserId", getProductsByUserId);
-Router.get("/products/get/Sponsered", getProductsSponsered);
+Router.get("/products/get/Sponsored", getProductsSponsored);
 Router.put("/products/update", UpdateProduct);
 Router.delete("/products/delete", DeleteProduct);
 
