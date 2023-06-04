@@ -6,7 +6,7 @@ import {
   getProductsById,
   getProductsByUserId,
   getProductsSponsored,
-} from "../controllers/Products/getProducts.js";
+} from "../controllers/Products/GetProducts.js";
 import { UpdateProduct } from "../controllers/Products/UpdateProduct.js";
 import { DeleteProduct } from "../controllers/Products/DeleteProduct.js";
 import {

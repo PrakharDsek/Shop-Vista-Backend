@@ -32,7 +32,6 @@ export const GetProducts = async (req, res) => {
     });
   }
 };
-
 export const getProductsSponsored = async (req, res) => {
   try {
     const sponsoredProducts = await Product.find({ Sponsered: true });
@@ -78,10 +77,33 @@ export const getProductsById = async (req, res) => {
 export const getProductsByUserId = async (req, res) => {
   try {
     const { userId } = req.query;
-    const FindProduct = await Product.find({ SellerId: userId });
+    const FindProduct = await Product.find({SellerId:userId});
     res.status(200).json({
       success: true,
       message: "Got the product",
       data: FindProduct,
     });
-  } catch
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const getOrders = async (req, res) => {
+  const { userId } = req.query;
+  try {
+    const getOrders = await Orders.find({ OrdererId: userId });
+    res.status(200).json({
+      success: true,
+      message: "Got all orders",
+      data: getOrders,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false ,
+      message: error.message
+    })
+  }
+};
